@@ -1,28 +1,26 @@
-%bcond_without bootstrap
+%bcond_with bootstrap
 %global packname  fpc
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
 Version:          2.0_3
-Release:          1
+Release:          2
 Summary:          Flexible procedures for clustering
 Group:            Sciences/Mathematics
 License:          GPL
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_2.0-3.tar.gz
 BuildArch:        noarch
-Requires:         R-core
-Requires:         R-MASS R-cluster R-mclust R-flexmix 
-%if %{with bootstrap}
-Requires:         R-prabclus R-class R-diptest R-mvtnorm 
-%else
-Requires:         R-trimcluster R-prabclus R-class R-diptest R-mvtnorm 
+Requires:         R-core R-MASS R-cluster R-mclust R-flexmix R-prabclus
+Requires:         R-class R-diptest R-mvtnorm
+%if %{without bootstrap}
+Requires:         R-trimcluster
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-MASS R-cluster R-mclust R-flexmix
-%if %{with bootstrap}
-BuildRequires:    R-prabclus R-class R-diptest R-mvtnorm 
-%else
-BuildRequires:    R-trimcluster R-prabclus R-class R-diptest R-mvtnorm 
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-MASS
+BuildRequires:    R-cluster R-mclust R-flexmix R-prabclus R-class
+BuildRequires:    R-diptest R-mvtnorm
+%if %{without bootstrap}
+BuildRequires:    R-trimcluster
 %endif
 
 %description
@@ -40,7 +38,7 @@ methods implemented in R, including estimating the number of clusters with
 kmeans, pam and clara. Modality diagnosis for Gaussian mixtures. Note that
 the use of the package mclust (called by function prabclust) is protected
 by a special license, see
-http://www.stat.washington.edu/mclust/license.txt. For an overview see
+http://www.stat.washington.edu/mclust/license.txt.
 
 %prep
 %setup -q -c -n %{packname}
