@@ -4,7 +4,7 @@
 
 Name:             R-%{packname}
 Version:          2.0_3
-Release:          2
+Release:          3
 Summary:          Flexible procedures for clustering
 Group:            Sciences/Mathematics
 License:          GPL
