@@ -12,13 +12,13 @@ URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_2.1-5.tar.gz
 BuildArch:        noarch
 Requires:         R-core R-MASS R-cluster R-mclust R-flexmix R-prabclus
-Requires:         R-class R-diptest R-mvtnorm
+Requires:         R-class R-diptest R-mvtnorm R-tclust
 %if %{without bootstrap}
 Requires:         R-trimcluster
 %endif
 BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-MASS
 BuildRequires:    R-cluster R-mclust R-flexmix R-prabclus R-class
-BuildRequires:    R-diptest R-mvtnorm
+BuildRequires:    R-diptest R-mvtnorm R-tclust
 %if %{without bootstrap}
 BuildRequires:    R-trimcluster
 %endif
