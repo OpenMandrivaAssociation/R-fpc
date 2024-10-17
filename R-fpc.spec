@@ -8,7 +8,7 @@ Release:          1
 Summary:          Flexible procedures for clustering
 Group:            Sciences/Mathematics
 License:          GPL
-URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
+URL:              https://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_2.1-5.tar.gz
 BuildArch:        noarch
 Requires:         R-core R-MASS R-cluster R-mclust R-flexmix R-prabclus
